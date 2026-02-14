@@ -4,7 +4,6 @@ import { useState } from "react"
 import { DashboardHeader } from "@/components/dashboard/header"
 import { HeroStats } from "@/components/dashboard/hero-stats"
 import { IntelFeed } from "@/components/dashboard/intel-feed"
-import { ConciergeQuery } from "@/components/dashboard/concierge-query"
 import { TokenChart } from "@/components/dashboard/token-chart"
 import { AnalyticsView } from "@/components/dashboard/analytics-view"
 import { ReportsView } from "@/components/dashboard/reports-view"
@@ -47,7 +46,7 @@ export default function Page() {
                 </div>
                 <div className="lg:col-span-2 flex flex-col gap-4">
                   <TokenChart />
-                  <ConciergeQuery />
+
                 </div>
               </div>
             </div>
