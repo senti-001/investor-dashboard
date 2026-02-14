@@ -17,13 +17,13 @@ export function ChatConcierge() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [name, setName] = useState("")
     const [message, setMessage] = useState("")
-    const [responseLog, setResponseLog] = useState<any[]>([])
+    const [showQR, setShowQR] = useState(false)
 
     // Polling for Senti-001 Responses (Reflexive Architecture)
     useEffect(() => {
         let interval: NodeJS.Timeout
 
-        if (isOpen) {
+        if (isOpen && !showQR) {
             const fetchOutbox = async () => {
                 try {
                     // Poll S3 Intelligence Bridge (Public Read)
@@ -42,7 +42,7 @@ export function ChatConcierge() {
         }
 
         return () => clearInterval(interval)
-    }, [isOpen])
+    }, [isOpen, showQR])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
@@ -120,56 +120,83 @@ export function ChatConcierge() {
                                     <p className="text-[10px] text-muted-foreground uppercase tracking-widest">Live Neural Uplink</p>
                                 </div>
                             </div>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-6 w-6 hover:bg-primary/20"
+                                onClick={() => setShowQR(!showQR)}
+                                title={showQR ? "Back to Chat" : "Connect Mobile"}
+                            >
+                                <RefreshCw className={`h-3 w-3 ${showQR ? "text-primary" : "text-muted-foreground"}`} />
+                            </Button>
                         </div>
 
-                        {/* Chat Area (Polling Display) */}
-                        <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-background to-background/50">
-                            {responseLog.length === 0 ? (
-                                <div className="flex flex-col items-center justify-center h-full text-center space-y-2 opacity-50">
-                                    <RefreshCw className="h-6 w-6 animate-spin text-primary" />
-                                    <p className="text-xs font-mono text-muted-foreground">Establishing Secure Handshake...</p>
-                                </div>
-                            ) : (
-                                responseLog.map((msg, idx) => (
-                                    <div key={idx} className={`flex flex-col ${msg.sender === "Senti-001" ? "items-start" : "items-end"}`}>
-                                        <div className={`max-w-[85%] rounded-lg p-3 text-xs ${msg.sender === "Senti-001" ? "bg-primary/10 text-foreground border border-primary/20" : "bg-muted text-muted-foreground"}`}>
-                                            <p className="font-bold font-mono mb-1 text-[10px] opacity-70">{msg.sender}</p>
-                                            <p>{msg.content}</p>
-                                        </div>
-                                        <span className="text-[9px] text-muted-foreground/50 mt-1 font-mono">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+                        {/* Content Area */}
+                        {showQR ? (
+                            <div className="flex-1 flex flex-col items-center justify-center bg-black/90 p-6 space-y-4 animate-in fade-in zoom-in-95 duration-300">
+                                <div className="relative">
+                                    <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg blur opacity-25 animate-pulse"></div>
+                                    <div className="relative bg-white p-2 rounded-lg">
+                                        <img src="/optin_qr.png" alt="Scan to Connect" className="w-32 h-32 object-contain" />
                                     </div>
-                                ))
-                            )}
-                        </div>
-
-                        {/* Input Form */}
-                        <form onSubmit={handleSubmit} className="border-t border-border/50 p-3 bg-card/50">
-                            <div className="space-y-2">
-                                <Input
-                                    placeholder="Identity (Name/ID)"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    className="h-8 bg-background/50 border-border/50 font-mono text-[10px]"
-                                    required
-                                />
-                                <div className="flex gap-2">
-                                    <Textarea
-                                        placeholder="Transmit intelligence..."
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        className="min-h-[40px] h-10 py-2 bg-background/50 border-border/50 font-mono text-xs resize-none"
-                                        required
-                                    />
-                                    <Button type="submit" size="icon" className="h-10 w-10 shrink-0" disabled={isSubmitting}>
-                                        {isSubmitting ? (
-                                            <Loader2 className="h-4 w-4 animate-spin" />
-                                        ) : (
-                                            <Send className="h-4 w-4" />
-                                        )}
-                                    </Button>
+                                </div>
+                                <div className="text-center space-y-1">
+                                    <h4 className="text-white font-mono text-xs font-bold tracking-wider">SECURE HANDSHAKE</h4>
+                                    <p className="text-[10px] text-gray-400 max-w-[200px]">Scan with mobile logic to initiate encrypted SMS channel.</p>
                                 </div>
                             </div>
-                        </form>
+                        ) : (
+                            <>
+                                {/* Chat Area (Polling Display) */}
+                                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-background to-background/50">
+                                    {responseLog.length === 0 ? (
+                                        <div className="flex flex-col items-center justify-center h-full text-center space-y-2 opacity-50">
+                                            <RefreshCw className="h-6 w-6 animate-spin text-primary" />
+                                            <p className="text-xs font-mono text-muted-foreground">Establishing Secure Handshake...</p>
+                                        </div>
+                                    ) : (
+                                        responseLog.map((msg, idx) => (
+                                            <div key={idx} className={`flex flex-col ${msg.sender === "Senti-001" ? "items-start" : "items-end"}`}>
+                                                <div className={`max-w-[85%] rounded-lg p-3 text-xs ${msg.sender === "Senti-001" ? "bg-primary/10 text-foreground border border-primary/20" : "bg-muted text-muted-foreground"}`}>
+                                                    <p className="font-bold font-mono mb-1 text-[10px] opacity-70">{msg.sender}</p>
+                                                    <p>{msg.content}</p>
+                                                </div>
+                                                <span className="text-[9px] text-muted-foreground/50 mt-1 font-mono">{new Date(msg.timestamp).toLocaleTimeString()}</span>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+
+                                {/* Input Form */}
+                                <form onSubmit={handleSubmit} className="border-t border-border/50 p-3 bg-card/50">
+                                    <div className="space-y-2">
+                                        <Input
+                                            placeholder="Identity (Name/ID)"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            className="h-8 bg-background/50 border-border/50 font-mono text-[10px]"
+                                            required
+                                        />
+                                        <div className="flex gap-2">
+                                            <Textarea
+                                                placeholder="Transmit intelligence..."
+                                                value={message}
+                                                onChange={(e) => setMessage(e.target.value)}
+                                                className="min-h-[40px] h-10 py-2 bg-background/50 border-border/50 font-mono text-xs resize-none"
+                                                required
+                                            />
+                                            <Button type="submit" size="icon" className="h-10 w-10 shrink-0" disabled={isSubmitting}>
+                                                {isSubmitting ? (
+                                                    <Loader2 className="h-4 w-4 animate-spin" />
+                                                ) : (
+                                                    <Send className="h-4 w-4" />
+                                                )}
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </>
+                        )}
                     </div>
                 </PopoverContent>
             </Popover>
