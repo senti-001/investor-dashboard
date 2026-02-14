@@ -17,6 +17,7 @@ export function ChatConcierge() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [name, setName] = useState("")
     const [message, setMessage] = useState("")
+    const [responseLog, setResponseLog] = useState<any[]>([])
     const [showQR, setShowQR] = useState(false)
 
     // Polling for Senti-001 Responses (Reflexive Architecture)
