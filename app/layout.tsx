@@ -22,6 +22,8 @@ export const viewport: Viewport = {
   themeColor: '#00FF41',
 }
 
+import { ChatConcierge } from '@/components/chat-concierge'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-[#0A0A0A] min-h-screen">{children}</body>
+      <body className="font-sans antialiased bg-[#0A0A0A] min-h-screen">
+        {children}
+        <ChatConcierge />
+      </body>
     </html>
   )
 }
