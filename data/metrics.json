@@ -1,0 +1,10 @@
+{
+  "rig_ratio": 0.0,
+  "neural_yield": 0.0,
+  "build_status": 0,
+  "timestamp": "2026-02-14 02:45",
+  "last_logs": [
+    "[Senti-001]: Real-time ingestion buffer initialized.",
+    "[Senti-001]: Devnet heartbeat link established."
+  ]
+}

@@ -1,0 +1,132 @@
+{
+    "historical_yield": [
+        {
+            "date": "2026-02-07",
+            "value": 7.2
+        },
+        {
+            "date": "2026-02-08",
+            "value": 7.5
+        },
+        {
+            "date": "2026-02-09",
+            "value": 7.8
+        },
+        {
+            "date": "2026-02-10",
+            "value": 8.1
+        },
+        {
+            "date": "2026-02-11",
+            "value": 8.3
+        },
+        {
+            "date": "2026-02-12",
+            "value": 8.4
+        },
+        {
+            "date": "2026-02-13",
+            "value": 8.41
+        },
+        {
+            "date": "2026-02-14",
+            "value": 14.2
+        }
+    ],
+    "agent_latency": [
+        {
+            "label": "Initial",
+            "neural": 1.5,
+            "standard": 0.8
+        },
+        {
+            "label": "DOM Ops",
+            "neural": 19.2,
+            "standard": 0.8
+        },
+        {
+            "label": "Vision",
+            "neural": 0.16,
+            "standard": 2.5
+        },
+        {
+            "label": "Total",
+            "neural": 20.8,
+            "standard": 4.1
+        }
+    ],
+    "success_metrics": [
+        {
+            "category": "Auth",
+            "success": 100
+        },
+        {
+            "category": "CAPTCHA",
+            "success": 100
+        },
+        {
+            "category": "Stealth",
+            "success": 85
+        },
+        {
+            "category": "Iframe",
+            "success": 92
+        }
+    ],
+    "vram_utilization": [
+        {
+            "hour": "00:00",
+            "usage": 24.2
+        },
+        {
+            "hour": "04:00",
+            "usage": 28.5
+        },
+        {
+            "hour": "08:00",
+            "usage": 35.1
+        },
+        {
+            "hour": "12:00",
+            "usage": 39.8
+        },
+        {
+            "hour": "16:00",
+            "usage": 32.4
+        },
+        {
+            "hour": "20:00",
+            "usage": 29.1
+        }
+    ],
+    "reports": [
+        {
+            "id": "NC-INTEL-001",
+            "name": "Intelligence Cascade: Daily Advancements",
+            "date": "2026-02-14",
+            "type": "BLOG",
+            "url": "https://neuralchromium.blogspot.com/2026/02/2026-02-14-0145-intelligence-cascade.html"
+        },
+        {
+            "id": "NC-ARCH-001",
+            "name": "Neural-Chromium Architecture (Reddit)",
+            "date": "2026-02-01",
+            "type": "DOC",
+            "url": "https://www.reddit.com/r/OpenSourceeAI/comments/1qmxblj/project_share_neuralchromium_a_custom_chromium/"
+        },
+        {
+            "id": "NC-TOKEN-001",
+            "name": "Tokenomics & Strategy Document",
+            "date": "2026-02-10",
+            "type": "LINK",
+            "url": "https://docs.google.com/document/d/1Ah7hpPNtrC-wwK8TOVgN6C84Z3nT5IShKFxNUg6O0Mw/edit?usp=sharing"
+        },
+        {
+            "id": "NC-SHIFT-001",
+            "name": "Paradigm Shift: Agent-Native Runtimes",
+            "date": "2026-01-26",
+            "type": "Analysis",
+            "url": "file:///C:/Users/senti/.openclaw/workspace/neural-chromium/Analysis%20of%20Neural-Chromium_%20Potential%20and%20Strategic%20Direction.md"
+        }
+    ]
+}
