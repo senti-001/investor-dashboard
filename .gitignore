@@ -36,8 +36,8 @@ yarn-error.log*
 Thumbs.db
 *.png
 !public/*.png
-Untitled design (4).png
-Untitled design (7).png
+/Untitled design (4).png
+/Untitled design (7).png
 
 # IDEs
 .vscode/
