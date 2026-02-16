@@ -14,8 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: '$NEURAL Investor Dashboard',
-  description: 'Investor command center for the Neural-Chromium sovereign cloud project. Real-time intelligence, yield tracking, and build status monitoring.',
+  title: '$NEURAL Sovereign Investor Dashboard',
+  description: 'Industrial-grade command center for the Neural-Chromium project. Monitor the Zero-Copy Chromium build (28.7%), track $NEURAL liquidity, and engage with Senti, the primary head intelligence.',
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export const viewport: Viewport = {
