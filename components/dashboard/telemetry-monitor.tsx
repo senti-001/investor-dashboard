@@ -48,7 +48,7 @@ export function TelemetryMonitor() {
                         <span className="font-mono text-[9px] text-[#00FF41]/40 uppercase">Disk Capacity</span>
                         <span className="font-mono text-[9px] text-[#00FF41]">{metrics.diskUsage}%</span>
                     </div>
-                    <Progress value={metrics.diskUsage} className="h-1 bg-[#00FF41]/10" />
+                    <Progress value={metrics.diskUsage} className="h-1 bg-[#00FF41]/10" indicatorClassName="bg-[#00FF41]" />
                 </div>
 
                 <div>
@@ -56,7 +56,7 @@ export function TelemetryMonitor() {
                         <span className="font-mono text-[9px] text-[#00FF41]/40 uppercase">GClient Sync</span>
                         <span className="font-mono text-[9px] text-[#00FF41]">{metrics.buildProgress}%</span>
                     </div>
-                    <Progress value={metrics.buildProgress} className="h-1 bg-[#00FF41]/10" />
+                    <Progress value={metrics.buildProgress} className="h-1 bg-[#00FF41]/10" indicatorClassName="bg-[#00FF41]" />
                 </div>
             </div>
 

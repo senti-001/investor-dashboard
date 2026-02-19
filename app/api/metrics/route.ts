@@ -2,9 +2,10 @@ import { NextResponse } from 'next/server'
 
 export async function GET() {
     try {
-        // Fetch from local Prometheus Mission Exporter
-        // In production, this would be an internal network IP or the Prometheus server itself
-        const response = await fetch('http://localhost:8000/metrics', {
+        // Configurable metrics endpoint (Supports local or remote GCP node)
+        const METRICS_URL = process.env.MISSION_METRICS_URL || 'http://localhost:8000/metrics'
+
+        const response = await fetch(METRICS_URL, {
             cache: 'no-store'
         })
 
