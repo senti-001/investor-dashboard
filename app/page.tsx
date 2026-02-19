@@ -7,6 +7,7 @@ import { IntelFeed } from "@/components/dashboard/intel-feed"
 import { TokenChart } from "@/components/dashboard/token-chart"
 import { AnalyticsView } from "@/components/dashboard/analytics-view"
 import { ReportsView } from "@/components/dashboard/reports-view"
+import { TelemetryMonitor } from "@/components/dashboard/telemetry-monitor"
 
 import { useHeartbeat } from "@/hooks/use-heartbeat"
 
@@ -46,7 +47,7 @@ export default function Page() {
                 </div>
                 <div className="lg:col-span-2 flex flex-col gap-4">
                   <TokenChart />
-
+                  <TelemetryMonitor />
                 </div>
               </div>
             </div>
