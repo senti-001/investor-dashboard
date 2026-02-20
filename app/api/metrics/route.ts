@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 export async function GET() {
     try {
         // Configurable metrics endpoint (Supports local or remote GCP node)
-        const METRICS_URL = process.env.MISSION_METRICS_URL || 'http://localhost:8000/metrics'
+        const METRICS_URL = process.env.MISSION_METRICS_URL || 'http://136.113.105.70:8000/metrics'
 
         const response = await fetch(METRICS_URL, {
             cache: 'no-store'
