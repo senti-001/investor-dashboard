@@ -16,10 +16,19 @@ export function TelemetryMonitor() {
         const fetchMetrics = async () => {
             try {
                 const res = await fetch('/api/metrics')
+                if (!res.ok) throw new Error('Failed to fetch metrics')
                 const data = await res.json()
-                setMetrics(data)
+
+                // Ensure numeric values to prevent render crashes
+                setMetrics({
+                    buildProgress: Number(data.buildProgress) || 0,
+                    diskUsage: Number(data.diskUsage) || 0,
+                    heartbeat: Number(data.heartbeat) || 0
+                })
             } catch (err) {
-                console.error("Failed to fetch Prometheus metrics")
+                console.error("Failed to fetch Prometheus metrics", err)
+                // Fallback to "Offline" state on error, don't crash
+                setMetrics(prev => ({ ...prev, heartbeat: 0 }))
             }
         }
 
