@@ -93,41 +93,34 @@ function BuildLogs({ liveLogs }: { liveLogs?: string[] }) {
   )
 }
 
-function YieldTicker({ liveYield }: { liveYield?: number }) {
-  const [yield_, setYield_] = useState(liveYield || 8.41)
-  const [displayValue, setDisplayValue] = useState(4521.09)
-
-  useEffect(() => {
-    if (liveYield) setYield_(liveYield)
-  }, [liveYield])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setYield_((prev) => {
-        const delta = (Math.random() - 0.48) * 0.03
-        return Math.max((liveYield || 7.5) - 1, Math.min((liveYield || 9.5) + 1, prev + delta))
-      })
-      setDisplayValue((prev) => {
-        const delta = (Math.random() - 0.45) * 2.5
-        return prev + delta
-      })
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [liveYield])
-
+function TokenStatus() {
   return (
-    <div className="flex flex-col items-center gap-1">
+    <div className="flex flex-col items-center gap-2">
       <span className="font-mono text-[10px] text-[#00FF41]/40 uppercase tracking-widest">
-        $NEURAL Yield
+        $NEURAL Token
       </span>
-      <span className="font-mono text-3xl font-bold text-[#00FF41] glow-text tabular-nums">
-        ${displayValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      <span className="font-mono text-2xl font-bold text-[#FFB341] glow-text">
+        PRE-GENESIS
       </span>
       <div className="flex items-center gap-1.5">
-        <span className="font-mono text-xs text-[#00FF41]/80">
-          +{yield_.toFixed(2)}% APY
+        <div className="w-1.5 h-1.5 rounded-full bg-[#FFB341] animate-pulse" />
+        <span className="font-mono text-[10px] text-[#FFB341]/80">
+          Awaiting Devnet Mint
         </span>
-        <span className="font-mono text-[10px] text-[#00FF41]/40">(LIVE)</span>
+      </div>
+      <div className="mt-2 flex flex-col gap-1 w-full">
+        <div className="flex items-center gap-1.5">
+          <span className="font-mono text-[8px] text-[#00FF41]/30">[ ]</span>
+          <span className="font-mono text-[9px] text-[#00FF41]/50">SPL Token Mint</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="font-mono text-[8px] text-[#00FF41]/30">[ ]</span>
+          <span className="font-mono text-[9px] text-[#00FF41]/50">Treasury PDA Deploy</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="font-mono text-[8px] text-[#00FF41]/30">[ ]</span>
+          <span className="font-mono text-[9px] text-[#00FF41]/50">Dashboard Sync</span>
+        </div>
       </div>
     </div>
   )
@@ -180,7 +173,7 @@ export function HeroStats() {
 
       {/* $NEURAL Yield */}
       <div className="glass-card-bright rounded-lg p-6 flex flex-col items-center justify-center glow-green">
-        <YieldTicker liveYield={data.neural_yield} />
+        <TokenStatus />
       </div>
     </div>
   )

@@ -12,7 +12,7 @@ const INTEL_LOGS = [
   { id: "NC-GITHUB", msg: "Last 5 commits synced from master bridge", type: "github" },
   { id: "SENTI-AUTO", msg: "Agentic Lease framework: Autonomous Scheduling active", type: "intelligence" },
   { id: "NC-ZERO-COPY", msg: "Zero-Copy Vision architecture stabilized (sub-16ms)", type: "vision" },
-  { id: "NC-SOL-PDA", msg: "Hardware Treasury PDA: Deployed on Solana Devnet", type: "token" },
+  { id: "NC-SOL-GEN", msg: "Token Genesis: Pending ($NEURAL SPL Mint Queued)", type: "token" },
 ]
 
 function getTypeColor(type: string) {

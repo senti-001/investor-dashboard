@@ -7,6 +7,7 @@ export interface OnChainData {
     stakingYield: number
     totalSupply: number
     solPrice: number
+    status: 'pre-genesis' | 'devnet' | 'mainnet'
 }
 
 export function useOnChainSync() {
@@ -14,25 +15,14 @@ export function useOnChainSync() {
         treasuryBalance: 0,
         stakingYield: 0,
         totalSupply: 0,
-        solPrice: 0
+        solPrice: 0,
+        status: 'pre-genesis'
     })
 
     useEffect(() => {
-        // Phase 2: Authentic Sync
-        // Initial state is 0/null until a valid public address is synced
-        // via environment or Jotform ingestion.
-
-        const fetchOnChainContext = async () => {
-            // Future: fetch real market data/staking rates
-            setData({
-                treasuryBalance: 248500.52, // Current static seed
-                stakingYield: 14.2,
-                totalSupply: 1000000000,
-                solPrice: 112.45
-            })
-        }
-
-        fetchOnChainContext()
+        // Phase 2: Will connect to real Solana Devnet once $NEURAL is minted.
+        // Currently in Pre-Genesis state — no token exists yet.
+        // All values are 0 to reflect actual on-chain state.
     }, [])
 
     return data
