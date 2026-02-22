@@ -83,10 +83,10 @@ export default function Page() {
                 </div>
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
-                  onClick={() => window.open("https://docs.google.com/document/d/1Ah7hpPNtrC-wwK8TOVgN6C84Z3nT5IShKFxNUg6O0Mw/edit?usp=sharing", "_blank")}
+                  onClick={() => window.open("https://form.typeform.com/to/sbdm0689", "_blank")}
                 >
-                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">NC-TOKEN-DOC</span>
-                  <span className="font-mono text-xs text-[#00FF41]">Tokenomics & Strategy Document</span>
+                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">SOVEREIGN-LINK</span>
+                  <span className="font-mono text-xs text-[#00FF41]">Initialize Senti-001 Handshake</span>
                 </div>
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
@@ -130,3 +130,4 @@ export default function Page() {
     </main>
   )
 }
+
