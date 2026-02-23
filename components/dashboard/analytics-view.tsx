@@ -2,6 +2,7 @@
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, BarChart, Bar, AreaChart, Area } from "recharts"
 import { useAnalyticsData } from "@/hooks/use-analytics-data"
+import { BenchmarkPanel } from "@/components/dashboard/benchmark-panel"
 
 export function AnalyticsView() {
     const { data, loading } = useAnalyticsData()
@@ -17,12 +18,15 @@ export function AnalyticsView() {
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-8">
+            {/* 0. Build Performance Benchmarks */}
+            {data.benchmarks && <BenchmarkPanel data={data.benchmarks} />}
+
             {/* 1. Historical Yield Analysis */}
             <div className="glass-card-bright rounded-lg p-6 glow-green">
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#00FF41]" />
-                        <span className="font-mono text-[10px] text-[#00FF41] uppercase tracking-widest">Industrial Yield ($NEURAL)</span>
+                        <span className="font-mono text-[10px] text-[#00FF41] uppercase tracking-widest">Industrial Yield ($USDC)</span>
                     </div>
                 </div>
                 <div className="h-[200px] w-full">
@@ -38,7 +42,7 @@ export function AnalyticsView() {
                 </div>
             </div>
 
-            {/* 2. Agent Latency: Neural vs Standard */}
+            {/* 2. Agent Latency: Glazyr vs Standard */}
             <div className="glass-card-bright rounded-lg p-6 glow-blue">
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
@@ -53,13 +57,13 @@ export function AnalyticsView() {
                             <XAxis dataKey="label" stroke="#41CFFF40" fontSize={9} fontFamily="var(--font-mono)" />
                             <YAxis stroke="#41CFFF40" fontSize={9} fontFamily="var(--font-mono)" />
                             <RechartsTooltip contentStyle={{ backgroundColor: '#0A0A0A', border: '1px solid #41CFFF20', borderRadius: '4px', fontFamily: 'var(--font-mono)', fontSize: '10px' }} itemStyle={{ color: '#41CFFF' }} />
-                            <Bar dataKey="neural" fill="#00FF41" radius={[2, 2, 0, 0]} barSize={20} />
+                            <Bar dataKey="glazyr" fill="#00FF41" radius={[2, 2, 0, 0]} barSize={20} />
                             <Bar dataKey="standard" fill="#41CFFF" radius={[2, 2, 0, 0]} barSize={20} />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
                 <div className="flex gap-4 mt-2">
-                    <div className="flex items-center gap-1"><div className="w-2 h-2 bg-[#00FF41] rounded-sm" /><span className="text-[8px] font-mono text-[#00FF41]/60 uppercase">Neural</span></div>
+                    <div className="flex items-center gap-1"><div className="w-2 h-2 bg-[#00FF41] rounded-sm" /><span className="text-[8px] font-mono text-[#00FF41]/60 uppercase">Glazyr</span></div>
                     <div className="flex items-center gap-1"><div className="w-2 h-2 bg-[#41CFFF] rounded-sm" /><span className="text-[8px] font-mono text-[#41CFFF]/60 uppercase">Standard</span></div>
                 </div>
             </div>

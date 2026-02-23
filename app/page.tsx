@@ -8,6 +8,7 @@ import { TokenChart } from "@/components/dashboard/token-chart"
 import { AnalyticsView } from "@/components/dashboard/analytics-view"
 import { ReportsView } from "@/components/dashboard/reports-view"
 import { TelemetryMonitor } from "@/components/dashboard/telemetry-monitor"
+import { TerminalNode } from "@/components/dashboard/terminal-node"
 
 import { useHeartbeat } from "@/hooks/use-heartbeat"
 
@@ -53,6 +54,12 @@ export default function Page() {
             </div>
           )}
 
+          {activeTab === "terminal" && (
+            <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
+              <TerminalNode />
+            </div>
+          )}
+
           {activeTab === "analytics" && (
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
               <AnalyticsView />
@@ -78,29 +85,29 @@ export default function Page() {
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
                   onClick={() => window.open("https://www.reddit.com/r/OpenSourceeAI/comments/1qmxblj/project_share_neuralchromium_a_custom_chromium/", "_blank")}
                 >
-                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">NC-REDDIT</span>
+                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">GV-REDDIT</span>
                   <span className="font-mono text-xs text-[#00FF41]">Architecture Presentation</span>
                 </div>
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
-                  onClick={() => window.open("https://form.typeform.com/to/sbdm0689", "_blank")}
+                  onClick={() => window.open("/docs/x402-sovereignlink", "_blank")}
                 >
-                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">SOVEREIGN-LINK</span>
-                  <span className="font-mono text-xs text-[#00FF41]">Initialize Senti-001 Handshake</span>
+                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">SOVEREIGN-LINK (x402)</span>
+                  <span className="font-mono text-xs text-[#00FF41]">JWS Payment Integration Guide</span>
                 </div>
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
                   onClick={() => window.open("https://neuralchromium.blogspot.com/", "_blank")}
                 >
-                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">NC-BLOGGER</span>
-                  <span className="font-mono text-xs text-[#00FF41]">Neural Chromium Dev Blog</span>
+                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">GV-BLOGGER</span>
+                  <span className="font-mono text-xs text-[#00FF41]">Glazyr Viz Dev Blog</span>
                 </div>
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
                   onClick={() => window.open("https://neuralchromium.com", "_blank")}
                 >
-                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">NC-MAIN</span>
-                  <span className="font-mono text-xs text-[#00FF41]">neuralchromium.com Main Hub</span>
+                  <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">GV-MAIN</span>
+                  <span className="font-mono text-xs text-[#00FF41]">Glazyr Viz Main Hub</span>
                 </div>
               </div>
             </div>
@@ -111,7 +118,7 @@ export default function Page() {
         <footer className="glass-card rounded-lg px-4 py-2.5 flex items-center justify-between mt-auto">
           <div className="flex items-center gap-2">
             <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase tracking-wider">
-              $NEURAL Sovereign Intelligence
+              $USDC Sovereign Intelligence
             </span>
           </div>
           <div className="flex items-center gap-4">

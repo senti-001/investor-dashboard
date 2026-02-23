@@ -29,7 +29,7 @@ export function DashboardHeader({ activeTab, onTabChange }: DashboardHeaderProps
     return () => clearInterval(interval)
   }, [])
 
-  const tabs = ["Overview", "Analytics", "Reports", "Docs"]
+  const tabs = ["Overview", "Terminal", "Analytics", "Reports", "Docs"]
 
   return (
     <header className="flex flex-col gap-4">
@@ -49,9 +49,9 @@ export function DashboardHeader({ activeTab, onTabChange }: DashboardHeaderProps
         </div>
 
         <div className="flex items-center gap-3">
-          <img src="/Untitled design (7).png" alt="$NEURAL Logo" className="w-6 h-6 object-contain" />
+          <img src="/Untitled design (7).png" alt="$USDC Logo" className="w-6 h-6 object-contain" />
           <span className="font-sans text-sm font-bold text-[#00FF41] tracking-wide">
-            $NEURAL INVESTOR
+            GLAZYR VIZ | $USDC INVESTOR
           </span>
           <div className="w-px h-4 bg-[#00FF41]/20" />
           <div className="flex items-center gap-2 glass-card rounded px-2.5 py-1">

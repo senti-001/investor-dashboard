@@ -42,12 +42,12 @@ export async function GET() {
             // Legacy Scheme (HeroStats, useDashData)
             build_status: metrics.buildProgress,
             rig_ratio: metrics.diskUsage, // Mapping disk usage to rig ratio for viz
-            neural_yield: 14.2, // Static for now
+            usdc_yield: 14.2, // Static for now
             timestamp: new Date().toISOString(),
             last_logs: [
-                `[${new Date().toLocaleTimeString()}] NC-CORE: Heartbeat synced`,
-                `[${new Date().toLocaleTimeString()}] NC-BLD: Progress at ${metrics.buildProgress}%`,
-                `[${new Date().toLocaleTimeString()}] NC-DSK: Volume at ${metrics.diskUsage}%`
+                `[${new Date().toLocaleTimeString()}] GV-CORE: Heartbeat synced`,
+                `[${new Date().toLocaleTimeString()}] GV-BLD: Progress at ${metrics.buildProgress}%`,
+                `[${new Date().toLocaleTimeString()}] GV-DSK: Volume at ${metrics.diskUsage}%`
             ]
         }
 
@@ -66,7 +66,7 @@ export async function GET() {
             // Legacy
             build_status: 42,
             rig_ratio: 65,
-            neural_yield: 8.4,
+            usdc_yield: 8.4,
             timestamp: new Date().toISOString(),
             last_logs: ["System recovering from metrics outage..."]
         }, { status: 200 })

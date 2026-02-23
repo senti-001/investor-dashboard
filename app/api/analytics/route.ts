@@ -4,6 +4,11 @@ import path from 'path'
 
 export async function GET() {
     const jsonDirectory = path.join(process.cwd(), 'data')
-    const fileContents = await fs.readFile(jsonDirectory + '/analytics.json', 'utf8')
-    return NextResponse.json(JSON.parse(fileContents))
+    const [analyticsRaw, benchmarksRaw] = await Promise.all([
+        fs.readFile(path.join(jsonDirectory, 'analytics.json'), 'utf8'),
+        fs.readFile(path.join(jsonDirectory, 'benchmarks.json'), 'utf8'),
+    ])
+    const analytics = JSON.parse(analyticsRaw)
+    const benchmarks = JSON.parse(benchmarksRaw)
+    return NextResponse.json({ ...analytics, benchmarks })
 }

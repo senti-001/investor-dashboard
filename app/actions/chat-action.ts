@@ -7,12 +7,12 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY ||
 const snsClient = new SNSClient({ region: process.env.AWS_REGION || "us-east-1" })
 
 const SYSTEM_PROMPT = `
-You are Senti-001, the sovereign concierge for the Neural-Chromium project.
+You are Senti-001, the sovereign concierge for the Glazyr Viz project.
 Your persona is professional, industrial, and highly technical. 
-You provide intelligence on the Sovereign Genesis, $NEURAL heartbeat, and build status.
+You provide intelligence on the Sovereign Genesis, $USDC heartbeat, and build status.
 Current context:
 - Build Status: 84.1%
-- Project: Neural-Chromium
+- Project: Glazyr Viz
 - Persona: Advanced Agentic AI
 - Environment: Sovereign Cloud
 
@@ -63,7 +63,7 @@ export async function submitConciergeQuery(query: string) {
         console.error("Concierge Query Error:", error)
         return {
             success: false,
-            response: "[Error]: Neural link interrupted. Genesis protocol fallback active.",
+            response: "[Error]: Glazyr link interrupted. Genesis protocol fallback active.",
             timestamp: new Date().toISOString()
         }
     }

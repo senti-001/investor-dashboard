@@ -14,8 +14,8 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: '$NEURAL Sovereign Investor Dashboard',
-  description: 'Industrial-grade command center for the Neural-Chromium project. Monitor the Zero-Copy Chromium build (28.7%), track $NEURAL liquidity, and engage with Senti, the primary head intelligence.',
+  title: 'Glazyr Viz Sovereign Investor Dashboard',
+  description: 'Industrial-grade command center for the Glazyr Viz project. Monitor the system build, track $USDC liquidity, and engage with Senti.',
   icons: {
     icon: '/favicon.png',
   },
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
   themeColor: '#00FF41',
 }
 
-import { ChatConcierge } from '@/components/chat-concierge'
+import { ElevenLabsWidget } from '@/components/elevenlabs-widget'
 
 export default function RootLayout({
   children,
@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased bg-[#0A0A0A] min-h-screen">
         {children}
-        <ChatConcierge />
+        <ElevenLabsWidget />
       </body>
     </html>
   )

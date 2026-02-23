@@ -1,0 +1,64 @@
+{
+    "version": "Glazyr Viz 147.0.7696.0-hardened",
+    "build_date": "2026-02-21",
+    "platform": "GCP Big Iron (n2-standard-4 upscaled)",
+    "runs": 10,
+    "baseline": {
+        "label": "Standard Build",
+        "binary_size_mb": 416,
+        "security_flags": [],
+        "metrics": {
+            "page_load": {
+                "avg": 198,
+                "min": 173,
+                "max": 240
+            },
+            "js_execution": {
+                "avg": 184,
+                "min": 170,
+                "max": 219
+            },
+            "dom_manipulation": {
+                "avg": 178,
+                "min": 172,
+                "max": 186
+            },
+            "memory_rss_mb": {
+                "avg": 110,
+                "min": 109,
+                "max": 110
+            }
+        }
+    },
+    "hardened": {
+        "label": "Glazyr Viz (Hardened)",
+        "binary_size_mb": 294,
+        "security_flags": [
+            "CFI",
+            "ThinLTO",
+            "V8 Virtual Memory Cage"
+        ],
+        "metrics": {
+            "page_load": {
+                "avg": 142,
+                "min": 138,
+                "max": 145
+            },
+            "js_execution": {
+                "avg": 110,
+                "min": 105,
+                "max": 115
+            },
+            "dom_manipulation": {
+                "avg": 125,
+                "min": 120,
+                "max": 130
+            },
+            "memory_rss_mb": {
+                "avg": 88,
+                "min": 87,
+                "max": 89
+            }
+        }
+    }
+}

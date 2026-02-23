@@ -4,8 +4,8 @@ import { ChartPie } from "lucide-react"
 
 const MILESTONES = [
   { name: "Chromium Fork", status: "complete", progress: 100 },
-  { name: "Neural Overlay", status: "active", progress: 47 },
-  { name: "$NEURAL Mint", status: "pending", progress: 0 },
+  { name: "Glazyr Overlay", status: "active", progress: 47 },
+  { name: "$USDC Mint", status: "pending", progress: 0 },
   { name: "Mainnet Launch", status: "pending", progress: 0 },
 ]
 

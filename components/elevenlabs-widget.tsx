@@ -2,7 +2,7 @@
 
 import { useEffect } from "react"
 
-export function ChatConcierge() {
+export function ElevenLabsWidget() {
     useEffect(() => {
         // Load ElevenLabs Conversational AI Widget
         const script = document.createElement("script")
@@ -25,5 +25,5 @@ export function ChatConcierge() {
         }
     }, [])
 
-    return null // The ElevenLabs widget injects its own floating UI
+    return null
 }

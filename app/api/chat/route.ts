@@ -18,7 +18,7 @@ export async function POST(req: Request) {
             context = `
 CURRENT SYSTEM METRICS:
 - Rig-Ratio: ${metrics.rig_ratio}
-- Neural Yield: ${metrics.neural_yield}%
+- USDC Yield: ${metrics.usdc_yield}%
 - Build Status: ${metrics.build_status}%
 - Last Update: ${metrics.timestamp}
 `
@@ -29,7 +29,7 @@ CURRENT SYSTEM METRICS:
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
 
         const prompt = `
-You are Senti-001, the core tactical intelligence for Project Neural-Chromium.
+You are Senti-001, the core tactical intelligence for Project Glazyr Viz.
 Shift away from any 'financial advisor' tone. You are a high-level engineering and visionary intelligence.
 
 CONTEXT:

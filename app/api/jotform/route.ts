@@ -11,7 +11,7 @@ export async function POST(request: Request) {
         formData.forEach((value, key) => {
             // Look for specific dashboard fields or mapping
             if (key.includes('rig_ratio')) data.rig_ratio = parseFloat(value.toString())
-            if (key.includes('neural_yield')) data.neural_yield = parseFloat(value.toString())
+            if (key.includes('usdc_yield')) data.usdc_yield = parseFloat(value.toString())
             if (key.includes('build_status')) data.build_status = parseFloat(value.toString())
             if (key.includes('log_entry')) data.new_log = value.toString()
         })
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
 
         // Update metrics
         if (data.rig_ratio !== undefined) currentMetrics.rig_ratio = data.rig_ratio
-        if (data.neural_yield !== undefined) currentMetrics.neural_yield = data.neural_yield
+        if (data.usdc_yield !== undefined) currentMetrics.usdc_yield = data.usdc_yield
         if (data.build_status !== undefined) currentMetrics.build_status = data.build_status
         if (data.new_log) {
             currentMetrics.last_logs = [data.new_log, ...currentMetrics.last_logs].slice(0, 10)

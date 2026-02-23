@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 export interface DashboardData {
     rig_ratio: number
-    neural_yield: number
+    usdc_yield: number
     build_status: number
     timestamp: string
     last_logs: string[]

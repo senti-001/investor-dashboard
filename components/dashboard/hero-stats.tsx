@@ -50,12 +50,12 @@ function CircularProgress({ percentage }: { percentage: number }) {
 function BuildLogs({ liveLogs }: { liveLogs?: string[] }) {
   const defaultLogs = [
     "NC-BLD-001: Initializing sovereign mesh...",
-    "NC-BLD-002: Deploying neural overlay v2.4...",
+    "GV-BLD-002: Deploying glazyr overlay v2.4...",
     "NC-BLD-003: Configuring tensor pipelines...",
     "NC-BLD-004: Verifying quantum state locks...",
-    "NC-BLD-005: Compiling chromium bindings...",
+    "NC-BLD-005: Compiling software bindings...",
     "NC-BLD-006: Establishing devnet handshake...",
-    "NC-BLD-007: Compiling Neural Overlay...",
+    "GV-BLD-007: Compiling Glazyr Overlay...",
     "NC-BLD-008: Build checkpoint saved...",
   ]
 
@@ -97,7 +97,7 @@ function TokenStatus() {
   return (
     <div className="flex flex-col items-center gap-2">
       <span className="font-mono text-[10px] text-[#00FF41]/40 uppercase tracking-widest">
-        $NEURAL Token
+        $USDC Token
       </span>
       <span className="font-mono text-2xl font-bold text-[#FFB341] glow-text">
         PRE-GENESIS

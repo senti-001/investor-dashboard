@@ -6,13 +6,13 @@ const INTEL_LOGS = [
   { id: "NC-INTEL-001", msg: "Intelligence Cascade: Daily Advancements initialized", type: "intelligence" },
   { id: "NC-OPS-020", msg: "Emergency Redaction: scrubbing exposed keys", type: "security" },
   { id: "SENTI-001", msg: "Infrastructure Heartbeat: VRAM Verified (40.0GB)", type: "system" },
-  { id: "NC-TOKEN-001", msg: "$NEURAL Tokenomics: 70/20/10 split active", type: "token" },
+  { id: "NC-TOKEN-001", msg: "$USDC Tokenomics: 70/20/10 split active", type: "token" },
   { id: "NC-WEB-DEV", msg: "feat: implement NC-WEB-DEV-001 technical specs", type: "build" },
   { id: "NC-EC2-NODE", msg: "EC2 Node: /dev/root 485G (58% util)", type: "system" },
   { id: "NC-GITHUB", msg: "Last 5 commits synced from master bridge", type: "github" },
   { id: "SENTI-AUTO", msg: "Agentic Lease framework: Autonomous Scheduling active", type: "intelligence" },
   { id: "NC-ZERO-COPY", msg: "Zero-Copy Vision architecture stabilized (sub-16ms)", type: "vision" },
-  { id: "NC-SOL-GEN", msg: "Token Genesis: Pending ($NEURAL SPL Mint Queued)", type: "token" },
+  { id: "NC-SOL-GEN", msg: "Token Genesis: Pending ($USDC SPL Mint Queued)", type: "token" },
 ]
 
 function getTypeColor(type: string) {
