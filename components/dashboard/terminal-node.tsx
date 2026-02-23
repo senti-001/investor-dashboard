@@ -27,7 +27,7 @@ export function TerminalNode() {
             case "/help":
                 newHistory.push("Available commands:")
                 newHistory.push("  /status    - Node health, DMA metrics & Token Savings ROI")
-                newHistory.push("  /bounty    - Access the 'Search & Extract' CTF")
+                newHistory.push("  /contribution - Access the Community Contribution board")
                 newHistory.push("  /x402      - Display economic layer integration details")
                 newHistory.push("  /capture   - [URL] Execute zero-copy vision (Requires 0.001 USDC or ETH eq.)")
                 newHistory.push("  /benchmark - Run performance comparison vs Standard CDP")
@@ -50,10 +50,10 @@ export function TerminalNode() {
                 newHistory.push("-----------------------------------------")
                 newHistory.push("RESULT: ECONOMIC SOVEREIGNTY THROUGH EFFICIENCY DETECTED.")
                 break
-            case "/bounty":
-                newHistory.push("[BOUNTY] Search & Extract CTF - 500 USDC Reward")
-                newHistory.push("[BOUNTY] Requires 'shm_vision_read' tool for high-dynamic parsing.")
-                newHistory.push("[BOUNTY] Execute glazyr-init to begin.")
+            case "/contribution":
+                newHistory.push("[COMMUNITY] Search & Extract Contribution - High Priority")
+                newHistory.push("[COMMUNITY] Requires 'shm_vision_read' tool for high-dynamic parsing.")
+                newHistory.push("[COMMUNITY] Execute glazyr-init to begin.")
                 break
             case "/x402":
                 newHistory.push("[ECONOMY] Universal Commerce Protocol Interceptor Loaded")

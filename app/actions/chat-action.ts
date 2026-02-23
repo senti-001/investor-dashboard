@@ -25,6 +25,33 @@ export async function submitConciergeQuery(query: string) {
             throw new Error("Missing GOOGLE_GENERATIVE_AI_API_KEY")
         }
 
+        const model = genAI.getGenerat"use server"
+
+import { GoogleGenerativeAI } from "@google/generative-ai"
+import { SNSClient, PublishCommand } from "@aws-sdk/client-sns"
+
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "")
+const snsClient = new SNSClient({ region: process.env.AWS_REGION || "us-east-1" })
+
+const SYSTEM_PROMPT = `
+You are Senti-001, the sovereign concierge for the Glazyr Viz project.
+Your persona is professional, industrial, and highly technical. 
+You provide intelligence on the Sovereign Genesis, $USDC heartbeat, and build status.
+Current context:
+- Build Status: 84.1%
+- Project: Glazyr Viz
+- Persona: Advanced Agentic AI
+- Environment: Sovereign Cloud
+
+Keep responses concise (max 2-3 sentences) and prefix with [Senti-001]:.
+`
+
+export async function submitConciergeQuery(query: string) {
+    try {
+        if (!process.env.GOOGLE_GENERATIVE_AI_API_KEY) {
+            throw new Error("Missing GOOGLE_GENERATIVE_AI_API_KEY")
+        }
+
         const model = genAI.getGenerativeModel({
             model: "gemini-1.5-flash",
             systemInstruction: SYSTEM_PROMPT
