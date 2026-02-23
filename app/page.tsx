@@ -83,7 +83,7 @@ export default function Page() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
-                  onClick={() => window.open("https://www.reddit.com/r/OpenSourceeAI/comments/1qmxblj/project_share_neuralchromium_a_custom_chromium/", "_blank")}
+                  onClick={() => window.open("https://www.reddit.com/r/AI_Agents/comments/1rb4jya/comment/o6u7tty/", "_blank")}
                 >
                   <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">GV-REDDIT</span>
                   <span className="font-mono text-xs text-[#00FF41]">Architecture Presentation</span>
@@ -104,7 +104,7 @@ export default function Page() {
                 </div>
                 <div
                   className="glass-card p-4 rounded border border-[#00FF41]/10 hover:border-[#00FF41]/30 transition-all cursor-pointer"
-                  onClick={() => window.open("https://neuralchromium.com", "_blank")}
+                  onClick={() => window.open("https://glazyr.com", "_blank")}
                 >
                   <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase block mb-1">GV-MAIN</span>
                   <span className="font-mono text-xs text-[#00FF41]">Glazyr Viz Main Hub</span>
