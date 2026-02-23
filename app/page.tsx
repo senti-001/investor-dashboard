@@ -9,6 +9,7 @@ import { AnalyticsView } from "@/components/dashboard/analytics-view"
 import { ReportsView } from "@/components/dashboard/reports-view"
 import { TelemetryMonitor } from "@/components/dashboard/telemetry-monitor"
 import { TerminalNode } from "@/components/dashboard/terminal-node"
+import { OpportunitiesView } from "@/components/dashboard/opportunities-view"
 
 import { useHeartbeat } from "@/hooks/use-heartbeat"
 
@@ -70,6 +71,10 @@ export default function Page() {
             <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
               <ReportsView />
             </div>
+          )}
+
+          {activeTab === "opportunities" && (
+            <OpportunitiesView />
           )}
 
           {activeTab === "docs" && (

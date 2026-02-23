@@ -3,12 +3,12 @@
 import { useEffect, useState, useRef } from "react"
 
 const INTEL_LOGS = [
-  { id: "NC-INTEL-001", msg: "Intelligence Cascade: Daily Advancements initialized", type: "intelligence" },
+  { id: "GV-INTEL-001", msg: "Global Sync: Multi-region nodes initialized", type: "intelligence" },
   { id: "NC-OPS-020", msg: "Emergency Redaction: scrubbing exposed keys", type: "security" },
   { id: "SENTI-001", msg: "Infrastructure Heartbeat: VRAM Verified (40.0GB)", type: "system" },
-  { id: "NC-TOKEN-001", msg: "$USDC Tokenomics: 70/20/10 split active", type: "token" },
+  { id: "GV-TOKEN-001", msg: "$USDC Allocation: Treasury distribution active", type: "token" },
   { id: "NC-WEB-DEV", msg: "feat: implement NC-WEB-DEV-001 technical specs", type: "build" },
-  { id: "NC-EC2-NODE", msg: "EC2 Node: /dev/root 485G (58% util)", type: "system" },
+  { id: "GV-GCP-NODE", msg: "Production Node: Optimized Performance (999x)", type: "system" },
   { id: "NC-GITHUB", msg: "Last 5 commits synced from master bridge", type: "github" },
   { id: "SENTI-AUTO", msg: "Agentic Lease framework: Autonomous Scheduling active", type: "intelligence" },
   { id: "NC-ZERO-COPY", msg: "Zero-Copy Vision architecture stabilized (sub-16ms)", type: "vision" },
@@ -106,7 +106,7 @@ export function IntelFeed() {
         <div className="flex items-center gap-2">
           <div className="w-1.5 h-1.5 rounded-full bg-[#00FF41] animate-pulse-dot" />
           <span className="font-mono text-[10px] text-[#00FF41] uppercase tracking-widest">
-            Intelligence Cycle
+            Global Activity Sync
           </span>
         </div>
         <span className="font-mono text-[9px] text-[#00FF41]/30 uppercase">

@@ -26,7 +26,7 @@ export function AnalyticsView() {
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#00FF41]" />
-                        <span className="font-mono text-[10px] text-[#00FF41] uppercase tracking-widest">Industrial Yield ($USDC)</span>
+                        <span className="font-mono text-[10px] text-[#00FF41] uppercase tracking-widest">Efficiency ROI ($USDC)</span>
                     </div>
                 </div>
                 <div className="h-[200px] w-full">
@@ -73,7 +73,7 @@ export function AnalyticsView() {
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#B341FF]" />
-                        <span className="font-mono text-[10px] text-[#B341FF] uppercase tracking-widest">Hardware Treasury Load (GB)</span>
+                        <span className="font-mono text-[10px] text-[#B341FF] uppercase tracking-widest">Resource Utilization (GB)</span>
                     </div>
                 </div>
                 <div className="h-[200px] w-full">
@@ -100,7 +100,7 @@ export function AnalyticsView() {
                 <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#FFB341]" />
-                        <span className="font-mono text-[10px] text-[#FFB341] uppercase tracking-widest">Mission Critical Integrity (%)</span>
+                        <span className="font-mono text-[10px] text-[#FFB341] uppercase tracking-widest">Extraction Success Rate (%)</span>
                     </div>
                 </div>
                 <div className="h-[200px] w-full">

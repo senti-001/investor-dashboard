@@ -86,7 +86,7 @@ export function TerminalNode() {
             <div className="bg-[#00FF41]/10 px-4 py-2 border-b border-[#00FF41]/20 flex items-center gap-2">
                 <TerminalIcon className="w-4 h-4 text-[#00FF41]" />
                 <span className="font-mono text-xs text-[#00FF41] uppercase tracking-widest">
-                    Senti-001 Cutting Edge Terminal
+                    Glazyr Viz Cutting Edge Terminal
                 </span>
             </div>
 

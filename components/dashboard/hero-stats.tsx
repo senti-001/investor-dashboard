@@ -97,15 +97,15 @@ function TokenStatus() {
   return (
     <div className="flex flex-col items-center gap-2">
       <span className="font-mono text-[10px] text-[#00FF41]/40 uppercase tracking-widest">
-        $USDC Token
+        $USDC Seed Allocation
       </span>
       <span className="font-mono text-2xl font-bold text-[#FFB341] glow-text">
-        PRE-GENESIS
+        SEED PHASE
       </span>
       <div className="flex items-center gap-1.5">
         <div className="w-1.5 h-1.5 rounded-full bg-[#FFB341] animate-pulse" />
         <span className="font-mono text-[10px] text-[#FFB341]/80">
-          Awaiting Devnet Mint
+          Awaiting Initial Distribution
         </span>
       </div>
       <div className="mt-2 flex flex-col gap-1 w-full">
@@ -144,13 +144,13 @@ export function HeroStats() {
       {/* Rig-Ratio */}
       <div className="glass-card-bright rounded-lg p-6 flex flex-col items-center justify-center glow-green">
         <span className="font-mono text-[10px] text-[#00FF41]/40 uppercase tracking-widest mb-2">
-          Rig-Ratio
+          Intelligence Yield (Efficiency)
         </span>
         <div className="flex items-baseline gap-1">
           <span className="font-mono text-4xl font-bold text-[#00FF41] glow-text">
-            {data.rig_ratio > 0 ? data.rig_ratio.toFixed(1) : "--"}
+            {data.rig_ratio > 0 ? (data.rig_ratio / 50).toFixed(1) : "--"}
           </span>
-          <span className="font-mono text-lg text-[#00FF41]/60">GB/1M</span>
+          <span className="font-mono text-lg text-[#00FF41]/60">x Factor</span>
         </div>
 
         <div className="w-full max-w-[120px] h-1.5 bg-[#00FF41]/5 rounded-full mt-4 overflow-hidden border border-[#00FF41]/10">
@@ -165,7 +165,7 @@ export function HeroStats() {
       {/* Build Status */}
       <div className="glass-card-bright rounded-lg p-6 flex flex-col items-center glow-green">
         <span className="font-mono text-[10px] text-[#00FF41]/40 uppercase tracking-widest mb-2">
-          Build Status
+          Runtime Stability
         </span>
         <CircularProgress percentage={data.build_status} />
         <BuildLogs liveLogs={data.last_logs} />

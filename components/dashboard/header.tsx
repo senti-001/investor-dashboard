@@ -29,7 +29,7 @@ export function DashboardHeader({ activeTab, onTabChange }: DashboardHeaderProps
     return () => clearInterval(interval)
   }, [])
 
-  const tabs = ["Overview", "Terminal", "Analytics", "Reports", "Docs"]
+  const tabs = ["Overview", "Terminal", "Analytics", "Reports", "Opportunities", "Docs"]
 
   return (
     <header className="flex flex-col gap-4">
